@@ -3,7 +3,7 @@ import streamlit as st
 import re 
 import requests
 
-WEBHOOK_URL = ""
+WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzRYkRm00BREE6EelZu9RjlSXYaWWD56H29aq7y0QhOrhOGovJh0F_nSkevXGJGDHXY/exec"
 
 
 def is_valid_email(email) : #ฟังก์ชันตรวจสอบความถูกต้องของอีเมล
@@ -20,7 +20,7 @@ def contact_form() : #เอาไว้ให้ views/about_me.py เรีย
         
         if submit_buton :
             #st.success("Message sucessfully sent!")
-            if not WEBHOOK_URL : #เช็คว่า webhook url มีค่าหรือไม่ หากมีข้อมูล == Ture , ไม่มี = False
+            if not WEBHOOK_URL : #เช็คว่า webhook url มีค่าหรือไม่ หากมีข้อมูล = Ture , ไม่มี = False
                 st.error("Email service is not set up. Please try again later.",icon = "😓") #แสดง Error message  
                 st.stop()
             
